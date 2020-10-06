@@ -1,9 +1,14 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '10.0'
 
 target 'challenge11' do
+
+  config = use_native_modules!
+  use_react_native!(:path => config["reactNativePath"])
 
   target 'challenge11Tests' do
     inherit! :complete
@@ -20,11 +25,12 @@ target 'challenge11' do
   end
 end
 
-target 'challenge11-tvOS' do
-  # Pods for challenge11-tvOS
 
-  target 'challenge11-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
+
+#  config = use_native_modules!
+
+#  use_react_native!(:path => config["reactNativePath"])
+
+
+
+#end
