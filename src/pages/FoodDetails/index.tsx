@@ -134,7 +134,7 @@ const FoodDetails: React.FC = () => {
 
   const cartTotal = useMemo(() => {
     const extraTotal = extras.reduce((accumulator, extra) => {
-      return (accumulator + extra.quantity) * extra.value;
+      return accumulator + extra.quantity * extra.value;
     }, 0);
 
     const foodTotal = food.price;
